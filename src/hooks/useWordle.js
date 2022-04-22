@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useInsertionEffect, useState } from 'react';
 
 const useWordle = (solution) => {
   const [ turn, setTurn ] = useState(0);
@@ -15,7 +15,23 @@ const useWordle = (solution) => {
   const addNewGuess = () => {}
 
   // handle keyup event
-  const handleKeyup = () => {}
+  const handleKeyup = ({ key }) => {
+
+    if(key === 'Backspace') {
+      setCurrentGuess(prev => prev.slice(0, -1));
+      return;
+    }
+    
+    if(/^[a-zA-Z]$/.test(key)) {
+      if(currentGuess.length <5) {
+        setCurrentGuess((prev) => {
+          return prev + key
+        });
+      }
+    }
+    console.log(key);
+    
+  }
 
   return {
     turn,
