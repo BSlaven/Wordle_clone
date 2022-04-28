@@ -58,7 +58,8 @@ const useWordle = (solution) => {
         console.log('word must be 5 characters long');
         return;
       }
-      formatGuess();
+      const formatted = formatGuess();
+      console.log(formatted);
     }
 
     if(key === 'Backspace') {
