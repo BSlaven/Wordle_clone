@@ -25,7 +25,14 @@ const useWordle = (solution) => {
     });
 
     // find any yellow letters
-    
+    formattedGuess.forEach((l, i) => {
+      if(solutionArray.includes(l.key) && l.color !== 'green') {
+        formattedGuess[i].color = 'yellow';
+        solutionArray[solutionArray.indexOf(l.key)] = null;
+      }
+    });
+
+    return formattedGuess;
   }
 
   // add new guess to state
