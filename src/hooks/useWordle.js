@@ -11,6 +11,21 @@ const useWordle = (solution) => {
   // each object will have a key and color properties
   const formatGuess = () => {
     console.log('formatting the guess - ', currentGuess);
+    let solutionArray = [...solution];
+    let formattedGuess = [...currentGuess].map(l => {
+      return { key: l, color: 'grey' }
+    });
+
+    // find any green letters
+    formattedGuess.forEach((l, i) => {
+      if(solutionArray[i] === l.key) {
+        formattedGuess[i].color = 'green';
+        solutionArray[i] = null;
+      }
+    });
+
+    // find any yellow letters
+    
   }
 
   // add new guess to state
