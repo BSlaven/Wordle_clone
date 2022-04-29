@@ -48,7 +48,9 @@ const useWordle = (solution) => {
 
     setHistory(prevHistory => {
       return [...prevHistory, currentGuess];
-    })
+    });
+
+    setTurn(prevTurn => prevTurn + 1);
   }
 
   // handle keyup event
