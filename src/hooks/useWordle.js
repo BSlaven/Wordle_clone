@@ -4,7 +4,7 @@ const useWordle = (solution) => {
   const [ turn, setTurn ] = useState(0);
   const [ currentGuess, setCurrentGuess ] = useState('');
   const [ guesses, setGuesses ] = useState([...Array(6)]);
-  const [ history, setHistory ] = useState(['hello', 'ninja']);
+  const [ history, setHistory ] = useState([]);
   const [ isCorrect, setIsCorrect ] = useState(false);
 
   // format a guess into an array of letter objects
@@ -45,6 +45,10 @@ const useWordle = (solution) => {
       newGuesses[turn] = formattedGuess;
       return newGuesses;
     });
+
+    setHistory(prevHistory => {
+      return [...prevHistory, currentGuess];
+    })
   }
 
   // handle keyup event
