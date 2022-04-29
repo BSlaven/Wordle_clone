@@ -51,6 +51,8 @@ const useWordle = (solution) => {
     });
 
     setTurn(prevTurn => prevTurn + 1);
+
+    setCurrentGuess('');
   }
 
   // handle keyup event
