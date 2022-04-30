@@ -3,7 +3,13 @@ import useWordle from "../hooks/useWordle";
 
 const Wordle = ({ solution }) => {
 
-  const { currentGuess, handleKeyup, guesses, isCorrect, turn } = useWordle(solution);
+  const { 
+    currentGuess,
+    handleKeyup,
+    guesses,
+    isCorrect,
+    turn
+  } = useWordle(solution);
 
   useEffect(() => {
     window.addEventListener('keyup', handleKeyup);
