@@ -33,20 +33,20 @@ h1 {
 }
 
 .row > div.green {
-  background-color: #5ac85a;
-  border-color: #5ac85a;
+  --background-color: #5ac85a;
+  --border-color: #5ac85a;
   animation: flip 0.5s ease forwards;
 }
 
 .row > div.grey {
-  background-color: #a1a1a1;
-  border-color: #a1a1a1;
+  --background-color: #a1a1a1;
+  --border-color: #a1a1a1;
   animation: flip 0.5s ease forwards;
 }
 
 .row > div.yellow {
-  background-color: #e2cc68;
-  border-color: #e2cc68;
+  --background-color: #e2cc68;
+  --border-color: #e2cc68;
   animation: flip 0.5s ease forwards;
 }
 
@@ -68,15 +68,24 @@ h1 {
 @keyframes flip {
   0% {
     transform: rotateX(0);
+    background-color: #fff;
+    border-color: #333;
   }
   45% {
     transform: rotateX(90deg);
-
+    background-color: #fff;
+    border-color: #333;
   }
   55% {
     transform: rotateX(90deg);
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: #fff;
   }
   100% {
     transform: rotateX(0);
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: #fff;
   }
 }
