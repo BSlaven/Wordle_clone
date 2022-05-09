@@ -53,6 +53,26 @@ const useWordle = (solution) => {
 
     setTurn(prevTurn => prevTurn + 1);
 
+    setUsedKeys(prev => {
+      let newKeys = { ...prev };
+      formattedGuess.forEach((letter) => {
+        const currentColor = newKeys[letter.key];
+        if(letter.color === 'green') {
+          newKeys[letter.key] = 'green';
+          return;
+        }
+        if(letter.color === 'yellow' && currentColor !== 'green') {
+          newKeys[letter.key] = 'yellow';
+          return;
+        }
+        if(letter.color === 'grey' && currentColor !== 'green' && currentColor !== 'yellow') {
+          newKeys[letter.key] = 'grey';
+          return;
+        }
+      })
+      return newKeys;
+    });
+    
     setCurrentGuess('');
   }
 
