@@ -10,7 +10,8 @@ const Wordle = ({ solution }) => {
     handleKeyup,
     guesses,
     isCorrect,
-    turn
+    turn,
+    usedKeys
   } = useWordle(solution);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const Wordle = ({ solution }) => {
       <div>solution - {solution}</div>
       <div>current guess - {currentGuess}</div>
       <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
-      <Keypad />
+      <Keypad usedKeys={usedKeys} />
     </div>  
   )
 }

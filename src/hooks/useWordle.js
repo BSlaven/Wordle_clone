@@ -72,7 +72,7 @@ const useWordle = (solution) => {
       })
       return newKeys;
     });
-    
+
     setCurrentGuess('');
   }
 
@@ -119,7 +119,8 @@ const useWordle = (solution) => {
     currentGuess,
     guesses,
     isCorrect,
-    handleKeyup
+    handleKeyup,
+    usedKeys
   }
 }
 
