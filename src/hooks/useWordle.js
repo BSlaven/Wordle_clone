@@ -6,6 +6,7 @@ const useWordle = (solution) => {
   const [ guesses, setGuesses ] = useState([...Array(6)]);
   const [ history, setHistory ] = useState([]);
   const [ isCorrect, setIsCorrect ] = useState(false);
+  const [ usedKeys, setUsedKeys ] = useState({});
 
   // format a guess into an array of letter objects
   // each object will have a key and color properties
