@@ -18,11 +18,11 @@ const Keypad = ({ usedKeys }) => {
         const color = usedKeys[letter.key];
 
         return (
-          <div key={letter.key} className={letter.key}>
+          <div key={letter.key} className={color}>
             {letter.key}
           </div>
         )
-      })}      
+      })}
     </div>
   )
 }
