@@ -22,6 +22,11 @@ const Wordle = ({ solution }) => {
       console.log('You win!!!');      
     }
 
+    if(turn > 5) {
+      console.log('No more guesses');
+      window.removeEventListener('keyup', handleKeyup);
+    }
+
     return () => window.removeEventListener('keyup', handleKeyup);
   }, [handleKeyup, isCorrect]);
 
