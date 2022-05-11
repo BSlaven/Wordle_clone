@@ -82,18 +82,15 @@ const useWordle = (solution) => {
     if(key === 'Enter') {
       // add guess if turn is less than 5
       if(turn > 5) {
-        console.log('you used all your guesses')
         return;
       }
       // no duplicate words
       if(history.includes(currentGuess)) {
-        console.log('you already tried that word');
         return;
       }
 
       // make sure the word is five characters long
       if(currentGuess.length !== 5) {
-        console.log('word must be 5 characters long');
         return;
       }
       const formatted = formatGuess();
