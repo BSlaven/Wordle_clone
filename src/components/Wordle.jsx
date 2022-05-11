@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useWordle from "../hooks/useWordle";
 import Grid from './Grid';
 import Keypad from './Keypad';
+import Modal from './Modal';
 
 const Wordle = ({ solution }) => {
 
@@ -40,6 +41,7 @@ const Wordle = ({ solution }) => {
       <div>current guess - {currentGuess}</div>
       <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
       <Keypad usedKeys={usedKeys} />
+      <Modal />
     </div>  
   )
 }
